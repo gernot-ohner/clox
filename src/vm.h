@@ -22,6 +22,7 @@ typedef enum {
     INTERPRET_RUNTIME_ERROR
 } InterpretationResult;
 
+VM* getVm();
 void initVM();
 void freeVM();
 void resetStack();

@@ -8,6 +8,9 @@
 
 VM vm;
 
+VM* getVm() {
+    return &vm;
+}
 
 void initVM() {
     resetStack();
@@ -36,7 +39,7 @@ static InterpretationResult run() {
 
     for (;;) {
         uint8_t instruction;
-        switch (instruction = *vm.ip++) {
+        switch (instruction = READ_BYTE()) {
 #ifdef DEBUG_TRACE_EXECUTION
             printf("          ");
             for (Value* slot = vm.stack; slot < vm.stackTop; slot++) {

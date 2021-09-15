@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.20)
+project(clox C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(clox
+        src/main.c
+        src/common.h
+        src/chunk.h src/chunk.c
+        src/memory.h src/memory.c
+        src/debug.c src/debug.h
+        src/value.h src/value.c
+        src/vm.c src/vm.h
+        )
+
+
+add_executable(clox_tests
+        src/common.h
+        src/chunk.h src/chunk.c
+        src/memory.h src/memory.c
+        src/debug.c src/debug.h
+        src/value.h src/value.c
+        src/vm.c src/vm.h
+        tests/test_VM.c)
+
+set(CHECK_INSTALL_DIR "/usr/bi")
+find_package(Check)
+
+#target_link_libraries(clox check)
