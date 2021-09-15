@@ -5,7 +5,7 @@
 #ifndef CLOX_COMMON_H
 #define CLOX_COMMON_H
 
-#define DEBUG_TRACE_EXECUTION
+#define DEBUG_TRACE_EXECUTION true
 
 #include <stdbool.h>
 #include <stddef.h>
